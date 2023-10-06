@@ -1,0 +1,643 @@
+¨* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background: gray;
+}
+
+/*menu desplegable*/
+.nav-bar {
+    background: #E38646;
+    padding: 20px;
+    display: block;
+    color: white;
+    cursor: pointer;
+    font-size: 1.5em;
+    width: 150%;
+
+}
+
+.menu,
+.submenu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    margin-top: -2px;
+}
+
+.menu {
+    background: #0a0000;
+    width: 100%;
+    margin-left: -110%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: all 0.5s;
+}
+
+.menu__link {
+    display: block;
+    padding: 18px;
+    color: rgb(156, 26, 26);
+    font-size: 1.2em;
+    text-decoration: none;
+}
+
+.menu__link:hover {
+    background: #444;
+}
+
+.submenu .menu__link:hover {
+    background: #87898a;
+}
+
+.submenu {
+    height: 0;
+    overflow: hidden;
+    transition: all 0.3s;
+}
+
+.submenu .menu__link {
+    background: #333;
+    padding-left: 50px;
+}
+
+.mostrar {
+    margin-left: 0;
+}
+
+@media(min-width:1024px) {
+    .nav-bar {
+        display: none;
+    }
+
+    .menu {
+        margin-left: 0;
+        display: flex;
+    }
+
+    .container-submenu {
+        position: relative;
+    }
+
+    .submenu {
+        position: absolute;
+        top: 60px;
+        width: 200px;
+        overflow: visible;
+        z-index: 1000;
+        opacity: 0;
+        visibility: hidden;
+    }
+
+    .container-submenu:hover .submenu {
+        opacity: 1;
+        visibility: visible;
+
+    }
+
+    .footodo {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+    }
+
+    .form-header {
+        padding: 90px;
+    }
+
+    .form-row {
+        flex-direction: row;
+        align-items: flex-start;
+        margin-bottom: 20px;
+    }
+
+    .form-row input[type="text"] {
+        width: 250px;
+        height: initial;
+    }
+
+    .form-row label {
+        text-align: right;
+        width: 120px;
+        margin-top: 7px;
+        padding-right: 20px;
+    }
+
+    .form-row textarea {
+        width: 250px;
+    }
+
+    .form-row button {
+        margin-left: 120px;
+    }
+}
+
+
+
+
+
+/*Slider automatizado y manual*/
+.container-slider {
+    width: 90%;
+    max-width: 900px;
+    margin: auto;
+    overflow: hidden;
+    box-shadow: 0 0 0 10px #fff,
+        0 15px 50px;
+    position: relative;
+    margin-top: 100px;
+    border-radius: 2%;
+}
+
+.slider {
+    height: 400px;
+    width: 400%;
+    display: flex;
+    margin-left: -100%;
+
+}
+
+.slider__section {
+    width: 100%;
+}
+
+.slider img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.slider__btn {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    background: rgba(255, 255, 255, 0.7);
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 30px;
+    font-weight: bold;
+    font-family: monospace;
+    text-align: center;
+    border-radius: 50%;
+    cursor: pointer;
+
+}
+
+.slider__btn:hover {
+    background: #05dcf8;
+}
+
+.slider__btn--left {
+    left: 10px;
+}
+
+.slider__btn--right {
+    right: 10px;
+}
+
+/*Terminos y Condiciones*/
+#pnew {
+    font-size: 16px;
+    line-height: 1.5;
+    margin-bottom: 10px;
+    text-align: center;
+    color: white;
+}
+
+.titulo-seccion {
+    font-size: 20px;
+    text-decoration: underline;
+}
+
+h1 {
+    text-align: center;
+    color: white;
+}
+
+.seccion {
+    margin-top: 20px;
+    color: white;
+}
+
+/*Nosotros*/
+#nosenose {
+    color: rgb(255, 255, 255);
+    font-family: 'Courier New', monospace;
+    color: #FF5733;
+    border: 1px solid #f1f7f5;
+    box-shadow: 2px 2px 5px rgba(7, 7, 7, 0.5);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    font-weight: bold;
+    font-size: 30px;
+    font-family: sans-serif;
+    margin: 10px;
+    padding: 5px;
+}
+
+/*Galeria*/
+.contenedorgaleria {
+    text-align: center;
+    margin-top: 200px;
+}
+
+.fila-arriba,
+.fila-abajo {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+
+}
+
+.fila-abajo {
+    margin-top: 20px;
+    list-style: none;
+
+}
+
+.fila-arriba img,
+.fila-abajo img {
+    width: 500px;
+    margin: 0 10px;
+    border-radius: 5%;
+}
+
+/* Zoom de imagen */
+.imagen-zoom {
+    width: 200px;
+    margin: 0 10px;
+    border-radius: 5%;
+    transition: transform 0.3s;
+}
+
+/* Estilo de imagen cuando el mouse se acerca */
+.imagen-zoom:hover {
+    transform: scale(1.2);
+}
+
+/*Precios*/
+.recuadro {
+    border: 2px solid #f80519;
+    padding: 30px;
+    width: 300px;
+    text-align: center;
+    margin: 20px;
+    display: inline-block;
+}
+
+#nose {
+    color: white;
+}
+
+.precio {
+    color: white;
+}
+
+/*titulo*/
+.caratula {
+    font-size: 6em;
+    font-weight: 500;
+    color: #0a0000;
+    letter-spacing: 5px;
+    cursor: pointer;
+    transition: 1s;
+}
+
+.caratula:hover {
+    color: white;
+    text-shadow: 0 0 5px #03e9f4,
+        0 0 25px #03e9f4,
+        0 0 50px #03e9f4,
+        0 0 100px #03e9f4;
+}
+
+/*segamegadrive*/
+.listado-sega img {
+    width: 200px;
+    margin: 0 10px;
+}
+
+.container-sega {
+    margin-top: 1%;
+    display: flex;
+    justify-content: center;
+    list-style: none;
+
+
+}
+
+.listado-sega {
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    color: white;
+}
+
+.lis-sega {
+    list-style: none;
+}
+
+/*GameBoyColor*/
+.container-gbc {
+    margin-top: 1%;
+    display: flex;
+    justify-content: center;
+
+}
+
+.listado-gbc {
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    color: white;
+}
+
+.lis-gbc {
+    list-style: none;
+}
+
+/*Nes*/
+.container-nes {
+    margin-top: 1%;
+    display: flex;
+    justify-content: center;
+
+}
+
+.listado-nes {
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    color: white;
+}
+
+.lis-nes {
+    list-style: none;
+}
+
+/*N64*/
+.container-n64 {
+    margin-top: 1%;
+    display: flex;
+    justify-content: center;
+
+}
+
+.listado-n64 {
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    color: white;
+}
+
+.lis-n64 {
+    list-style: none;
+}
+
+/*ps1*/
+.container-ps1 {
+    margin-top: 1%;
+    display: flex;
+    justify-content: center;
+    height: 200px;
+}
+
+.listado-ps1 {
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    color: white;
+}
+
+.lis-ps1 {
+    list-style: none;
+}
+
+/*psp*/
+.container-psp {
+    margin-top: 1%;
+    display: flex;
+    justify-content: center;
+    height: 200px;
+}
+
+.listado-psp {
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    color: white;
+}
+
+.lis-psp {
+    list-style: none;
+}
+
+/*ps2*/
+.container-ps2 {
+    margin-top: 1%;
+    display: flex;
+    justify-content: center;
+    height: 200px;
+}
+
+.listado-ps2 {
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    color: white;
+}
+
+.lis-ps {
+    list-style: none;
+}
+
+/*titulo consolas*/
+.titulo-consolas {
+    color: rgb(237, 242, 245);
+    font-size: 30px;
+    font-family: sans-serif;
+    margin: 10px;
+    padding: 5px;
+}
+
+/*footer*/
+footer {
+    background-color: #161616;
+    color: #fff;
+    padding: 10px 0;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.brand h2 {
+    font-size: 24px;
+    margin: 0;
+}
+
+.brand p {
+    font-size: 14px;
+}
+
+.contact-info p {
+    font-size: 12px;
+}
+
+.footodo {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+/* ------------- Encabezado Contacto ------------- */
+
+header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.form-header {
+    text-align: center;
+    background-color: #57636e;
+    border: 1px solid #037cf5;
+    border-radius: 30px;
+    width: 50%;
+    margin: 50px auto;
+    padding: 50px;
+}
+
+.form-header h1 {
+    font-size: 30px;
+    margin-bottom: 20px;
+    color: black;
+}
+
+/* ------------- Formulario ------------- */
+
+.formulario {
+    background-color: #0c59a7;
+    border: 2px solid #000102;
+    border-radius: 20px;
+    width: 20%;
+    padding: 50px;
+    margin: 30px 0 40px 0;
+}
+
+/* ------------- Campos del Formulario ------------- */
+
+.form-row {
+    margin-bottom: 40px;
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    flex-wrap: wrap;
+
+}
+
+.form-row input[type="text"],
+.form-row input[type="email"] {
+    background-color: #bdbdbd;
+    border: 0;
+    border-radius: 6px;
+    width: 300%;
+    padding: 7px;
+    font-size: 14px;
+    border: 2px solid black;
+}
+
+.form-row label {
+    margin-bottom: 3px;
+    text-align: initial;
+}
+
+.form-row textarea {
+    font-family: "Helvetica", "Arial", sans-serif;
+    font-size: 14px;
+    background-color: #bdbdbd;
+    border: 2px solid black;
+    border-radius: 6px;
+    margin-bottom: 10px;
+    padding: 7px;
+    resize: none;
+    width: 100%;
+
+}
+
+.form-row button {
+    font-size: 16px;
+    font-weight: bold;
+
+
+
+    color: #ffffff;
+    background-color: #5995da;
+
+
+
+    border: none;
+    border-radius: 3px;
+
+
+    padding: 6px 20px;
+    cursor: pointer;
+}
+
+
+.form-row button:hover {
+    background-color: #76aeed;
+
+}
+
+
+.form-row button:active {
+    background-color: #407fc7;
+
+}
+
+/* ------------- Para Pantallas de más de 700px ------------- */
+/*@media only screen and (min-width: 700px){
+    .form-header {
+        padding: 50px;
+      }
+    
+      .form-row {
+        flex-direction: row;
+        align-items: flex-start;
+        margin-bottom: 20px;
+      }
+      .form-row input[type="text"] {
+        width: 250px;
+        height: initial;
+      }
+      .form-row label {
+        text-align: right;
+        width: 120px;
+        margin-top: 7px;
+        padding-right: 20px;
+      }
+    
+    .form-row textarea {
+        width: 250px;
+      }
+      .form-row button {
+        margin-left: 120px;
+      }
+      .footodo {
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+    }
+}*/
