@@ -104,35 +104,7 @@ body {
         width: 100%;
     }
 
-    .form-header {
-        padding: 90px;
-    }
-
-    .form-row {
-        flex-direction: row;
-        align-items: flex-start;
-        margin-bottom: 20px;
-    }
-
-    .form-row input[type="text"] {
-        width: 250px;
-        height: initial;
-    }
-
-    .form-row label {
-        text-align: right;
-        width: 120px;
-        margin-top: 7px;
-        padding-right: 20px;
-    }
-
-    .form-row textarea {
-        width: 250px;
-    }
-
-    .form-row button {
-        margin-left: 120px;
-    }
+    
 }
 
 
@@ -552,7 +524,7 @@ header {
     background-color: #bdbdbd;
     border: 0;
     border-radius: 6px;
-    width: 300%;
+    width: 100%;
     padding: 7px;
     font-size: 14px;
     border: 2px solid black;
@@ -608,7 +580,7 @@ header {
 }
 
 /* ------------- Para Pantallas de más de 700px ------------- */
-/*@media only screen and (min-width: 700px){
+@media only screen and (min-width: 700px){
     .form-header {
         padding: 50px;
       }
@@ -640,4 +612,4 @@ header {
         bottom: 0;
         width: 100%;
     }
-}*/
+}
